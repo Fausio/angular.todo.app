@@ -9,7 +9,24 @@
 
 </mat-toolbar>
 
+
+<div class="inputContainer">
+  <mat-form-field class="fullWidth">
+  <mat-label style="padding-left: 5px;">New To Do</mat-label>
+  <input matInput placeholder="Enter to-do description" #todoText>
+  <button matSuffix mat-raised-button color="accent" class="addButton"
+  (click)="addItem(todoText.value); todoText.value = ''">
+  Add
+</button>
+</mat-form-field>
+</div>
+
 <div class="tableContainer">
+
+
+<!--   <input type="checkbox" class="mat-checkbox-input cdk-visually-hidden"
+  id="mat-checkbox-1-input" tabindex="0" aria-checked="false"> -->
+
   <table mat-table [dataSource]="items" class="mat-elevation-z3 fullWidth">
 
     <ng-container matColumnDef="id">

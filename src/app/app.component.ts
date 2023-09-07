@@ -11,7 +11,7 @@ import { TodoList } from './data.model/TodoList'
 export class AppComponent {
 
 
-  private list = new TodoList("Bob", [
+  private list = new TodoList("Fáusio", [
     new TodoItem("Go run", true),
     new TodoItem("Get flowers"),
     new TodoItem("Collect tickets"),
@@ -23,10 +23,17 @@ export class AppComponent {
   }
 
   get itemCouunt(): number {
+    console.log("loading itemCouunt")
     return this.list.items.filter(i => !i.complete).length
   }
 
-  get items(): readonly TodoItem[]{
-    return this.list.items;
+  get items(): readonly TodoItem[] {
+    return this.list.items.filter(i => !i.complete)
+  }
+
+  addItem(newItem: string) {
+    if (newItem != "") {
+      this.list.AddItem(newItem);
+    }
   }
 }
