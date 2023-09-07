@@ -1,4 +1,9 @@
-<h3>
-  {{ userName }} 's To Do list
-  <h6>{{ itemCouunt}} Items</h6>
-</h3>
+<mat-toolbar color="primary" class="mat-elevation-z3">
+
+  <span> {{ userName }} 's To Do list </span>
+
+  <mat-icon matBadge="{{ itemCouunt}}" matBadgeColor="accent"> checklist </mat-icon>
+
+</mat-toolbar>
+
+ 
