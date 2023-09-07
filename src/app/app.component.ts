@@ -10,7 +10,7 @@ import { TodoList } from './data.model/TodoList'
 
 export class AppComponent {
 
-  
+
   private list = new TodoList("Bob", [
     new TodoItem("Go run", true),
     new TodoItem("Get flowers"),
