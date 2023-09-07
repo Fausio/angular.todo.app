@@ -10,6 +10,7 @@ import { TodoList } from './data.model/TodoList'
 
 export class AppComponent {
 
+  showComplete: boolean = false;
 
   private list = new TodoList("Fáusio", [
     new TodoItem("Go run", true),
@@ -28,7 +29,7 @@ export class AppComponent {
   }
 
   get items(): readonly TodoItem[] {
-    return this.list.items.filter(i => !i.complete)
+    return this.list.items.filter(i => !i.complete || this.showComplete)
   }
 
   addItem(newItem: string) {
